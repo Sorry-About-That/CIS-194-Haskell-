@@ -12,7 +12,7 @@ toDigitsRev = reverse . toDigits
 --Goal here is to double every second value, so second, fourth, etc.
       -- doubleEveryOtherRight is the final implementation
 doubleEveryOtherRight :: [Integer] -> [Integer]
-doubleEveryOtherRight n = reverse $ doubleEveryOther $ reverse n
+doubleEveryOtherRight = reverse . doubleEveryOther . reverse
 
          -- Helper funnction
 doubleEveryOther :: [Integer] -> [Integer]
