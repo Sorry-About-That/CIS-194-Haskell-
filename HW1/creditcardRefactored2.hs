@@ -15,16 +15,11 @@ doubleEveryOther xs =
   then zipWith (\ x y -> (if odd  y then 2 * x else x)) xs [1..length xs]
   else zipWith (\ x y -> (if even y then 2 * x else x)) xs [1..length xs]
 
-
     --Goal here is to sum the *digits* present in the list
 
 sumDigits :: [Integer] -> Integer
 sumDigits []     = 0
 sumDigits (x:xs) = (sum $ toDigits x) + sumDigits xs
-
    
 validate :: Integer -> Bool
-validate n = intermediate `mod` 10 == 0 
-    where 
-        intermediate =
-        (sumDigits.doubleEveryOtherRight.toDigits) n
+validate n = (sumDigits.doubleEveryOther.toDigits) n `mod` 10 == 0
