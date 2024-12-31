@@ -12,7 +12,7 @@ toDigitsRev = reverse . toDigits
 doubleEveryOther :: [Integer] -> [Integer]
 doubleEveryOther xs = 
  if even (length xs)
-  then zipWith (\ x y -> (if odd y then 2 * x else x)) xs [1..length xs]
+  then zipWith (\ x y -> (if odd  y then 2 * x else x)) xs [1..length xs]
   else zipWith (\ x y -> (if even y then 2 * x else x)) xs [1..length xs]
 
 
