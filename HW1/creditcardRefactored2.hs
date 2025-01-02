@@ -9,11 +9,9 @@ toDigits n
 toDigitsRev :: Integer -> [Integer]
 toDigitsRev = reverse . toDigits
 
-doubleEveryOther :: [Integer] -> [Integer]
-doubleEveryOther xs = 
- if even (length xs)
-  then zipWith (\ x y -> (if odd  y then 2 * x else x)) xs [1..length xs]
-  else zipWith (\ x y -> (if even y then 2 * x else x)) xs [1..length xs]
+doubleEveryOther :: [Integer] -> [Integer] 
+doubleEveryOther xs = zipWith (\x y -> if even y then 2*x else x) xs [size,size-1..1]
+         where size = length xs
 
     --Goal here is to sum the *digits* present in the list
 
