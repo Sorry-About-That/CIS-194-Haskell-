@@ -1,3 +1,4 @@
+module HW1 where
 -- CIS HW 1
 
     --Goal here is to make a function that takes a number, and splits it into a list containing the digits
